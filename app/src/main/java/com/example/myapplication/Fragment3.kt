@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.fragment.findNavController
 
 
 class Fragment3 : Fragment() {
@@ -20,16 +21,22 @@ class Fragment3 : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_3, container, false)
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val buttonBackToFragment1FromFragment3: Button = view.findViewById(R.id.backTo1From3)
         buttonBackToFragment1FromFragment3.setOnClickListener{
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+            findNavController().navigate(R.id.action_fragment3_to_fragment12)
+            /*val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             val fragment1 = Fragment1()
             fragmentTransaction.replace(R.id.fragment_container, fragment1)
             fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
+            fragmentTransaction.commit()*/
         }
-        return view
     }
 
 }
