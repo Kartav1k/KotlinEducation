@@ -30,12 +30,6 @@ class Fragment3 : Fragment() {
         val buttonBackToFragment1FromFragment3: Button = view.findViewById(R.id.backTo1From3)
         buttonBackToFragment1FromFragment3.setOnClickListener{
             findNavController().navigate(R.id.action_fragment3_to_fragment12)
-            /*val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            val fragment1 = Fragment1()
-            fragmentTransaction.replace(R.id.fragment_container, fragment1)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()*/
         }
     }
 

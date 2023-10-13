@@ -31,21 +31,9 @@ class Fragment2 : Fragment() {
         val imageBut: ImageButton = view.findViewById(R.id.imageBut)
         buttonBackToFragment1FromFragment2.setOnClickListener {
             findNavController().navigate(R.id.action_fragment2_to_fragment1);
-            /*val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            val fragment1 = Fragment1()
-            fragmentTransaction.replace(R.id.fragment_container, fragment1)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()*/
         }
         imageBut.setOnClickListener {
             findNavController().navigate(R.id.action_fragment2_to_fragment3);
-            /*val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            val fragment3 = Fragment3()
-            fragmentTransaction.replace(R.id.fragment_container, fragment3)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()*/
         }
     }
 }
