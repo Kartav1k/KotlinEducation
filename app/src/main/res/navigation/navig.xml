@@ -11,24 +11,20 @@
         android:label="fragment_1"
         tools:layout="@layout/fragment_1" >
         <action
-            android:id="@+id/action_fragment1_to_fragment3"
-            app:destination="@id/fragment3" />
-        <action
             android:id="@+id/action_fragment1_to_cameraFragment"
             app:destination="@id/cameraFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/fragment3"
-        android:name="com.example.myapplication.Fragment3"
-        android:label="fragment_3"
-        tools:layout="@layout/fragment_3" >
         <action
-            android:id="@+id/action_fragment3_to_fragment12"
-            app:destination="@id/fragment1" />
+            android:id="@+id/action_fragment1_to_adapterForList"
+            app:destination="@id/adapterForList" />
     </fragment>
     <fragment
         android:id="@+id/cameraFragment"
         android:name="com.example.myapplication.CameraFragment"
         android:label="fragment_camera"
         tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/adapterForList"
+        android:name="com.example.myapplication.RecView"
+        android:label="fragment_2"
+        tools:layout="@layout/adapterforlist" />
 </navigation>

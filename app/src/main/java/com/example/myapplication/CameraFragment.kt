@@ -53,14 +53,14 @@ class CameraFragment : Fragment() {
     fun saveDate(){
         val date=SimpleDateFormat("yyyy-MM-dd HH:mm:ss\n").format(Date())
         val dir = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "photos")// Путь к папке photos на внутреннем хранилище устройства
-        //val dir = File(getExteranalFilesDir("photos")   )
+        //val dir = File(getExternalFilesDir("photos")   )
         if(!dir.exists()) {
             if (dir.mkdir()) {
                 val fileName = File(dir, "date.txt")
                 fileName.createNewFile()
                 try {
                     Log.d(TAG, "Запись сделана")
-                    fileName.appendText((date))
+                    fileName.writeText(date)
                 } catch (e: IOException) {
                     e.printStackTrace()
                     Log.d(TAG, "Запись не удалась")
@@ -71,7 +71,6 @@ class CameraFragment : Fragment() {
             }
         }
         else{
-            Log.d(TAG, "Папку уже существует")
             val fileName = File(dir, "date.txt")
             try {
                 Log.d(TAG, "Запись сделана")

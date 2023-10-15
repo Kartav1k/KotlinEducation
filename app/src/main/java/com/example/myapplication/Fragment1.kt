@@ -31,7 +31,7 @@ class Fragment1 : Fragment() {
             findNavController().navigate(R.id.action_fragment1_to_cameraFragment);
         }
         buttonToFragment3.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment1_to_fragment3);
+            findNavController().navigate(R.id.action_fragment1_to_adapterForList);
         }
     }
 }
