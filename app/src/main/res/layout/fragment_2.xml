@@ -7,37 +7,10 @@
     tools:context=".Fragment2">
 
 
-    <Button
-        android:id="@+id/backTo1From2"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Назад в первый фрагмент"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Здесь только дырка в экране"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageBut" />
-
-    <ImageButton
-        android:id="@+id/imageBut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backTo1From2"
-        app:srcCompat="@android:drawable/alert_dark_frame"
-        tools:src="@tools:sample/backgrounds/scenic"
-        tools:srcCompat="@android:drawable/alert_dark_frame" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
