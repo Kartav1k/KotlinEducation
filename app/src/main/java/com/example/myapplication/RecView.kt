@@ -18,48 +18,23 @@ import java.io.File
 class RecView : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.recview, container, false)
         checkStoragePermission()
-        return view
-
+        return inflater.inflate(R.layout.recview, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recView: RecyclerView=view.findViewById(R.id.recyclerview)
-        val dateList = loadDatesFromFile() // Загрузите даты из файла (реализация ниже)
+        val dateList = loadDatesFromFile()
         val adapter = DateTimeAdapter(dateList)
         recView.adapter=adapter
         recView.layoutManager=LinearLayoutManager(requireContext())
         Log.d("RecView", "Список создан")
     }
-    /*private fun readDataFromFile(fileName: File): List<String> {
-        val dataList = mutableListOf<String>()
-        Log.d("RecView", "1")
-        try {
-            val fileInputStream = FileInputStream(fileName)
-            val reader = InputStreamReader(fileInputStream)
-            val bufferedReader = BufferedReader(reader)
-            var line: String
-            Log.d("RecView", "2")
-            while (bufferedReader.readLine().also { line = it } != null) {
-                dataList.add(line)
-                Log.d("RecView", "3")
-            }
-            bufferedReader.close()
-        } catch (e:Exception){
-            e.printStackTrace()
-            Log.d("RecView","4")
-        }
-        Log.d("RecView", "4")
-        return dataList
-    }*/
     private fun loadDatesFromFile(): List<DateItem> {
         val dir = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "photos")
         val fileName = File(dir, "date.txt")
-
         val dateItems = mutableListOf<DateItem>()
-
         if (fileName.exists()) {
             val lines = fileName.readLines()
             for (line in lines) {

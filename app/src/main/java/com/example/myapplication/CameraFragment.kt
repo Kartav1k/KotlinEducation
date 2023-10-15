@@ -53,7 +53,6 @@ class CameraFragment : Fragment() {
     fun saveDate(){
         val date=SimpleDateFormat("yyyy-MM-dd HH:mm:ss\n").format(Date())
         val dir = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "photos")// Путь к папке photos на внутреннем хранилище устройства
-        //val dir = File(getExternalFilesDir("photos")   )
         if(!dir.exists()) {
             if (dir.mkdir()) {
                 val fileName = File(dir, "date.txt")
